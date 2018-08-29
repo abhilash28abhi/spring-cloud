@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/abhilash28abhi/Spring_Cloud
+          searchPaths: ConfigData
+server:
+  port: 8001

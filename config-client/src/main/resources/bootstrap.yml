@@ -1,0 +1,12 @@
+---
+spring:
+  application:
+      name: config-server-client
+
+  cloud:
+    config:
+      uri: http://localhost:8001
+  profiles:
+    active: PROD
+server:
+  port: 8002
