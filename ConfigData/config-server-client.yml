@@ -1,3 +1,2 @@
  ---
-config-word:
-	Spring cloud config
+config-word: Spring cloud config
