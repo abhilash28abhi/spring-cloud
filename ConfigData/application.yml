@@ -1,0 +1,6 @@
+#properties within this file will be applied to all the config server clients as the file name is application
+---
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/				
