@@ -6,21 +6,21 @@ eureka:
       defaultZone: http://localhost:8010/eureka/
 ---
 spring:
-  profiles: eureka-client-adjective
+  profiles: adjective
 words: reasonable,leaky,suspicious,ordinary,unlikely
 ---
 spring:
-  profiles: eureka-client-article
+  profiles: article
 words: a,the
 ---
 spring:
-  profiles: eureka-client-noun
+  profiles: noun
 words: boat,book,vote,seat,backpack,partition,groundhog
 ---
 spring:
-  profiles: eureka-client-subject
+  profiles: subject
 words: I,You,He,She,It
 ---
 spring:
-  profiles: eureka-client-verb
+  profiles: verb
 words: ran,knew,had,saw,bought
