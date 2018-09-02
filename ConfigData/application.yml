@@ -6,8 +6,6 @@ eureka:
       defaultZone: http://localhost:8010/eureka/
 
 ---
-spring:
-  profiles: adjective
 words: reasonable,leaky,suspicious,ordinary,unlikely
 
 ---
