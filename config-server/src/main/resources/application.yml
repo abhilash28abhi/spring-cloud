@@ -7,3 +7,4 @@ spring:
           searchPaths: ConfigData
 server:
   port: 8001
+# for file path use uri: file:///F:/SpringBoot/spring-cloud

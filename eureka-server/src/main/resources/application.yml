@@ -1,0 +1,67 @@
+---
+#To enable/disable eureka dashboard
+#eureka.dashboard.enabled=true
+#To change the path
+#eureka.dashboard.path=/services
+# This default profile is used when running a single instance completely standalone:
+#To run the eureka multiple times pass -Dspring.profiles.active=primary,-Dspring.profiles.active=seconday etc VM arguments
+spring:
+  profiles: default
+server:
+  port: 8010  
+eureka:
+  instance:
+    hostname: localhost 
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      
+---
+spring:
+  profiles: primary
+  application:
+    name: eureka-server-clustered   
+server:
+  port: 8011  
+eureka:
+  instance:
+    hostname: eureka-primary       
+  client:
+    registerWithEureka: true
+    fetchRegistry: true        
+    serviceUrl:
+      defaultZone: http://eureka-secondary:8012/eureka/,http://eureka-tertiary:8013/eureka/
+
+---
+spring:
+  profiles: secondary
+  application:
+    name: eureka-server-clustered      
+server:
+  port: 8012
+eureka:
+  instance:
+    hostname: eureka-secondary       
+  client:
+    registerWithEureka: true
+    fetchRegistry: true        
+    serviceUrl:
+      defaultZone: http://eureka-tertiary:8013/eureka/,http://eureka-primary:8011/eureka/
+
+---
+spring:
+  profiles: tertiary
+  application:
+    name: eureka-server-clustered      
+server:
+  port: 8013
+eureka:
+  instance:
+    hostname: eureka-tertiary       
+  client:
+    registerWithEureka: true
+    fetchRegistry: true    
+    serviceUrl:
+      defaultZone: http://eureka-primary:8011/eureka/,http://eureka-secondary:8012/eureka/
