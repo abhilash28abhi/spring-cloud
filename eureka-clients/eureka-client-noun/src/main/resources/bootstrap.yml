@@ -1,0 +1,28 @@
+# there is a registration delay which affects when you stopped the NOUN server, 
+#and you may be surprised that the Ribbon load balancer did not direct us away from the server 
+#that was clearly not available. We can address this by using different Ping, Rule, or LoadBalancer strategies. 
+#By default Ribbon relies on Eureka to provide a list of healthy servers, and we’ve seen 
+#that with Default settings Eureka can take a while to notice a server’s absence. 
+#We could use a different strategy, and also employ a rule that avoids non-functioning servers
+
+---
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8001
+#For Spring ribbon with multiple noun (client) servers config
+#eureka:
+#  instance:
+#    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}
+    
+---
+spring:
+  profiles: noun
+  application:
+    name: eureka-client-noun
+
+---
+spring:
+  profiles: cold-noun
+  application:
+    name: eureka-client-noun

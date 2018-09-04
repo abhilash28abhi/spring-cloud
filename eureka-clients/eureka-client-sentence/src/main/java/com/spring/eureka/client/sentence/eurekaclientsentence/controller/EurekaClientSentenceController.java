@@ -17,6 +17,10 @@ public class EurekaClientSentenceController {
 	@Autowired
 	private DiscoveryClient discoveryClient;
 	
+	//using ribbon
+	@Autowired 
+	RestTemplate restTemplate;
+	
 	@GetMapping("/sentence")
 	  public @ResponseBody String getSentence() {
 	    return 
@@ -27,7 +31,8 @@ public class EurekaClientSentenceController {
 	      + getWord("eureka-client-noun") + "." ;
 	  }
 	
-	public String getWord(String service) {
+	/* Using Eureka discovery client
+	 * public String getWord(String service) {
 		List<ServiceInstance> list = discoveryClient.getInstances(service);
 		if (list != null && list.size() > 0) {
 			URI uri = list.get(0).getUri();
@@ -36,5 +41,14 @@ public class EurekaClientSentenceController {
 			}
 		}
 		return null;
+	}*/
+	
+	/**
+	 *  Using the Ribbon client template created in the application class
+	 * @param service
+	 * @return
+	 */
+	public String getWord(String service) {
+		  return restTemplate.getForObject("http://" + service, String.class);
 	}
 }
