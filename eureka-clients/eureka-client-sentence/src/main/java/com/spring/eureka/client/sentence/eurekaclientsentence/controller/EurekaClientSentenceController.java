@@ -21,7 +21,7 @@ public class EurekaClientSentenceController {
 	@Autowired 
 	RestTemplate restTemplate;
 	
-	@GetMapping("/sentence")
+	  //@GetMapping("/sentence")
 	  public @ResponseBody String getSentence() {
 	    return 
 	      getWord("eureka-client-subject") + " "

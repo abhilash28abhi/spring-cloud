@@ -17,7 +17,8 @@ spring:
     
 ---
 spring:
-  profiles: noun
+  profiles:
+    active: noun
   application:
     name: eureka-client-noun
 
