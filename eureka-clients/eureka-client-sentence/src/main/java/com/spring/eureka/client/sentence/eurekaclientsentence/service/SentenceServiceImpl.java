@@ -3,11 +3,11 @@ package com.spring.eureka.client.sentence.eurekaclientsentence.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.eureka.client.sentence.eurekaclientsentence.dao.AdjectiveClient;
-import com.spring.eureka.client.sentence.eurekaclientsentence.dao.ArticleClient;
-import com.spring.eureka.client.sentence.eurekaclientsentence.dao.NounClient;
-import com.spring.eureka.client.sentence.eurekaclientsentence.dao.SubjectClient;
-import com.spring.eureka.client.sentence.eurekaclientsentence.dao.VerbClient;
+import com.spring.eureka.client.sentence.eurekaclientsentence.feignclients.AdjectiveClient;
+import com.spring.eureka.client.sentence.eurekaclientsentence.feignclients.ArticleClient;
+import com.spring.eureka.client.sentence.eurekaclientsentence.feignclients.NounClient;
+import com.spring.eureka.client.sentence.eurekaclientsentence.feignclients.SubjectClient;
+import com.spring.eureka.client.sentence.eurekaclientsentence.feignclients.VerbClient;
 
 /**
  * Build a sentence by assembling randomly generated subjects, verbs, 
