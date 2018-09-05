@@ -1,0 +1,20 @@
+---
+# Items that apply to ALL profiles:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/
+
+server:
+  port: 8030
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health
+
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: eureka-client-sentence,eureka-client-subject,eureka-client-verb,eureka-client-article,eureka-client-adjective,eureka-client-noun
+#cluster name expression is used while in cluster env appconfig contains the name of hystrix applications to be monitored
