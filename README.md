@@ -1,5 +1,5 @@
 # spring-cloud
-Spring cloud apps
+
 This repository contains the applications which are based on the following Spring cloud concepts using Netflix OSS.
   1. Spring cloud config server and clients
   2. Spring cloud eureka server and clients
