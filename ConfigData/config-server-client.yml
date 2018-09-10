@@ -3,4 +3,4 @@ config-word: Spring cloud config
 ---
 wordConfig:
   preamble: The lucky word is
-  luckyWord: Irish
+  luckyWord: Spring cloud bus
