@@ -7,3 +7,4 @@ This repository contains the applications which are based on the following Sprin
   4. Spring cloud rest client using Feign
   5. Spring cloud circuit breaker using Hystrix and Turbine for the dashboard
   6. Spring cloud bus using Rabbit Mq as a messaging service for dynamic configuration changes
+  7. Spring cloud Zuul used as an API gateway
