@@ -24,7 +24,7 @@
 		<java.version>1.8</java.version>
 	</properties>
 	
-	<!-- Spring cloud dependency: Acts as a parent for all spring cloud dependencies with their versions -->
+	<!-- Spring cloud dependency: Acts as a parent for all spring cloud dependencies with their own different versions -->
 	<dependencyManagement>
         <dependencies>
             <dependency>
